@@ -1,0 +1,14 @@
+version: '3'
+services:
+  postgres:
+    restart: always
+    image: postgres:10.12
+    volumes:
+      - ./create-tables.sql:/docker-entrypoint-initdb.d/create-tables.sql
+      - ./seed.sql:/docker-entrypoint-initdb.d/seed.sql
+      - ../sample_data.csv:/docker-entrypoint-initdb.d/sample_data.csv
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: test

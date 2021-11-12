@@ -1,0 +1,17 @@
+{
+  "name": "backend-property-map",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "db_setup": "docker-compose -f docker-compose.yml up -d  && echo 'Waiting 5 seconds for container to load' && sleep 5s",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.7.1"
+  }
+}
