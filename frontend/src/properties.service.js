@@ -1,6 +1,6 @@
 
 const getProperties = () => {
-  return fetch('http://localhost:3001/properties')
+  return fetch(`${process.env.API_URL}/properties`)
     .then(response => {
       return response.json();
     })
