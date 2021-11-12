@@ -1,6 +1,7 @@
 
 const getProperties = () => {
-  return fetch(`${process.env.API_URL}/properties`)
+  const url = `${process.env.REACT_APP_API_URL}/properties`;
+  return fetch(url)
     .then(response => {
       return response.json();
     })
