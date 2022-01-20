@@ -2,10 +2,7 @@
 const fs = require('fs');
 const Pool = require('pg').Pool;
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    ca: fs.readFileSync('./ca-certificate.cer').toString(),
-  }
+  connectionString: process.env.DATABASE_URL
 });
 
 const getProperties = () => {
